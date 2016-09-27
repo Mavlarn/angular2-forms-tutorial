@@ -10,6 +10,7 @@ export class TemplateFormsComponent {
     user: any;
     active: Boolean = true;
     errorMsg: String;
+    nameErrorMsg: String;
     constructor() {
         this.user = {
             name: '张三',
@@ -24,8 +25,13 @@ export class TemplateFormsComponent {
         if (theForm.invalid) {
             this.errorMsg = 'validation errors!';
             if (theForm.controls['name'].errors) {
-                this.errorMsg += JSON.stringify(theForm.controls['name'].errors);
+                this.nameErrorMsg = 'name error:' + JSON.stringify(theForm.controls['name'].errors);
+            } else {
+                this.nameErrorMsg = null;
             }
+        } else {
+            this.errorMsg = null;
+            this.nameErrorMsg = null;
         }
         console.log(theForm.value);
     }
@@ -36,9 +42,11 @@ export class TemplateFormsComponent {
         };
         this.active = false;
         setTimeout(() => this.active = true, 0);
+        return false;
     }
     reset(theForm: NgForm) {
         theForm.reset();
+        return false;
     }
     diagnostic(model) {
         console.log(JSON.stringify(model));
