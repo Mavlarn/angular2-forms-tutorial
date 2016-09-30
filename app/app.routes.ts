@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { TemplateFormsRoutes } from 'app/template-forms/template-forms.routes';
+import { TemplateFormsRoutes } from './template-forms/template-forms.routes';
+import { ReactiveFormsRoutes } from './reactive-forms/reactive-forms.routes';
 
 export const routes: Routes = [
     {
@@ -8,5 +9,6 @@ export const routes: Routes = [
         redirectTo: '/template-forms',
         pathMatch: 'full'
     },
-  ...TemplateFormsRoutes
+  ...TemplateFormsRoutes,
+  ...ReactiveFormsRoutes
 ];

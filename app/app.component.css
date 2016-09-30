@@ -1,8 +1,9 @@
 header section {
   display: inline-block;
-  width: 80%;
+  width: 60%;
 }
 header nav {
-  width: 20%;
+  width: 40%;
   float: right;
+  margin-top: 20px;
 }
