@@ -28,6 +28,7 @@
                 <div [hidden]="userForm.controls.mobile.valid || userForm.controls.mobile.pristine" class="alert alert-danger">
                     <p *ngIf="userForm.controls.mobile.errors?.minlength || userForm.controls.mobile.errors?.maxlength">电话长度必须为11</p>
                     <p *ngIf="userForm.controls.mobile.errors?.required">必须输入电话</p>
+                    <p *ngIf="userForm.controls.mobile.errors?.validateMobile">电话号码格式不正确</p>
                 </div>
             </div>
         </div>

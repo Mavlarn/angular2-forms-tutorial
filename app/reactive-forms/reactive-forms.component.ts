@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+import { validateMobile } from '../validators/mobile.validator';
+
 @Component({
     selector: 'reactive-form',
     templateUrl: 'app/reactive-forms/reactive-forms.component.html',
@@ -16,7 +18,7 @@ export class ReactiveFormsComponent implements OnInit {
     ngOnInit() {
         this.userForm = this.formBuilder.group({
             name: ['张三', [Validators.required, Validators.minLength(3)]],
-            mobile: [13800138001, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+            mobile: [13800138001, [Validators.required, Validators.minLength(11), Validators.maxLength(11), validateMobile]],
             address: this.formBuilder.group({
                 city: ['北京', Validators.required],
                 street: ['朝阳望京...', Validators.required]

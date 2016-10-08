@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
+import { MobileValidator } from '../validators/mobile.validator';
+
 @Component({
     selector: 'template-form',
     templateUrl: 'app/template-forms/template-forms.component.html',
